@@ -2,9 +2,35 @@
 
 * Installs [couchbase exporter](https://github.com/brunopsoares/prometheus_couchbase_exporter)
 
+## TL;DR;
+
+```console
+$ helm install incubator/prometheus-couchbase-exporter
+```
+
 ## Introduction
 
 This chart bootstraps a [couchbase exporter](https://github.com/brunopsoares/prometheus_couchbase_exporter) on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager. The exporter can connect to Couchbase directly for provided host and port.
+
+## Installing the Chart
+
+To install the chart with the release name `my-release`:
+
+```console
+$ helm install --name my-release incubator/prometheus-couchbase-exporter
+```
+
+The command deploys Couchbase Exporter on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+
+## Uninstalling the Chart
+
+To uninstall/delete the `my-release` deployment:
+
+```console
+$ helm delete my-release
+```
+
+The command removes all the Kubernetes components associated with the chart and deletes the release.
 
 ## Configuration
 
@@ -13,8 +39,8 @@ The following table lists the configurable parameters of the mysql exporter char
 |        Parameter                         |                                                          Description                                                 |                 Default                 |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
 | `replicaCount`                           | Amount of pods for the deployment                                                                                    | `1`                                     |
-| `image.repository`                       | Image repository                                                                                                     | `travix/couchbase-exporter`             |
-| `image.tag`                              | Image tag                                                                                                            | `latest`                                |
+| `image.repository`                       | Image repository                                                                                                     | `vdimitrov/couchbase-exporter`             |
+| `image.tag`                              | Image tag                                                                                                            | `1.0-alpine`                                |
 | `image.pullPolicy`                       | Image pull policy                                                                                                    | `IfNotPresent`                          |
 | `service.name`                           | Service name                                                                                                         | `couchbase-exporter`                    |
 | `service.type`                           | Service type                                                                                                         | `ClusterIP`                             |
